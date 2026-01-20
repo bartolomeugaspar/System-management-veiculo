@@ -1,6 +1,6 @@
 <?php
 // controllers/UserController.php
-require_once '../models/User.php';
+require_once __DIR__ .'/../models/User.php';
 require_once 'AuthController.php';
 
 class UserController {
@@ -15,7 +15,7 @@ class UserController {
     // Listar utilizadores
     public function index() {
         $users = $this->userModel->getAll();
-        include '../views/users/index.php';
+        include __DIR__ . '/../views/users/index.php';
     }
 
     // Formulário para criar
