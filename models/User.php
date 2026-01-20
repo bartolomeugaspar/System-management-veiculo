@@ -17,7 +17,7 @@ class User {
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE username = ? AND active = 1");
         $stmt->execute([$username]);
         $user = $stmt->fetch();
-        if ($user && password_verify($password, $user['password'])) {
+        if ($user && $password === $user['password']) {
             return $user;
         }
         return false;
