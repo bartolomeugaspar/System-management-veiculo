@@ -1,7 +1,9 @@
 <?php
 // models/User.php
-require_once '../config/database.php';
-
+//echo __DIR__ . '../config/database.php';
+//ie();
+// echo __DIR__;
+include_once __DIR__.'/../config/database.php';
 class User {
     private $pdo;
 

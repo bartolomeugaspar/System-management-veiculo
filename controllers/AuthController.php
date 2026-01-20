@@ -1,7 +1,8 @@
 <?php
 // controllers/AuthController.php
-session_start();
-require_once '../models/User.php';
+//session_start();
+
+require_once __DIR__ . '/../models/User.php';
 
 class AuthController {
     private $userModel;
@@ -25,10 +26,10 @@ class AuthController {
                 exit;
             } else {
                 $error = "Credenciais inválidas.";
-                include '../views/login.php';
+                include __DIR__ . '/../views/login.php';
             }
         } else {
-            include '../views/login.php';
+            include __DIR__ . '/../views/login.php';
         }
     }
 
