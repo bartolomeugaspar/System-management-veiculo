@@ -1,9 +1,9 @@
 <?php
 // controllers/ScheduleController.php
-require_once '../models/Schedule.php';
-require_once '../models/Vehicle.php';
-require_once '../models/User.php';
-require_once 'AuthController.php';
+require_once __DIR__ . '/../models/Schedule.php';
+require_once __DIR__ . '/../models/Vehicle.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/AuthController.php';
 
 class ScheduleController {
     private $scheduleModel;
@@ -20,7 +20,7 @@ class ScheduleController {
     // Listar agendamentos
     public function index() {
         $schedules = $this->scheduleModel->getAll();
-        include '../views/schedules/index.php';
+        include __DIR__ . '/../views/schedules/index.php';
     }
 
     // Formulário para criar
@@ -28,7 +28,7 @@ class ScheduleController {
         AuthController::checkLevel(1); // Apenas admin
         $vehicles = $this->vehicleModel->getAll();
         $users = $this->userModel->getAll();
-        include '../views/schedules/create.php';
+        include __DIR__ . '/../views/schedules/create.php';
     }
 
     // Salvar novo agendamento
@@ -56,7 +56,7 @@ class ScheduleController {
         $schedule = $this->scheduleModel->getById($id);
         $vehicles = $this->vehicleModel->getAll();
         $users = $this->userModel->getAll();
-        include '../views/schedules/edit.php';
+        include __DIR__ . '/../views/schedules/edit.php';
     }
 
     // Atualizar agendamento

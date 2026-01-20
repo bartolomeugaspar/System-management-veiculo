@@ -1,7 +1,7 @@
 <?php
 // controllers/OwnerController.php
-require_once '../models/Owner.php';
-require_once 'AuthController.php';
+require_once __DIR__ . '/../models/Owner.php';
+require_once __DIR__ . '/AuthController.php';
 
 class OwnerController {
     private $ownerModel;
@@ -15,12 +15,12 @@ class OwnerController {
     // Listar proprietários
     public function index() {
         $owners = $this->ownerModel->getAll();
-        include '../views/owners/index.php';
+        include __DIR__ . '/../views/owners/index.php';
     }
 
     // Formulário para criar
     public function create() {
-        include '../views/owners/create.php';
+        include __DIR__ . '/../views/owners/create.php';
     }
 
     // Salvar novo proprietário
@@ -42,7 +42,7 @@ class OwnerController {
     // Formulário para editar
     public function edit($id) {
         $owner = $this->ownerModel->getById($id);
-        include '../views/owners/edit.php';
+        include __DIR__ . '/../views/owners/edit.php';
     }
 
     // Atualizar proprietário

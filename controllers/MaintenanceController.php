@@ -1,9 +1,9 @@
 <?php
 // controllers/MaintenanceController.php
-require_once '../models/Maintenance.php';
-require_once '../models/Vehicle.php';
-require_once '../models/User.php';
-require_once 'AuthController.php';
+require_once __DIR__ . '/../models/Maintenance.php';
+require_once __DIR__ . '/../models/Vehicle.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/AuthController.php';
 
 class MaintenanceController {
     private $maintenanceModel;
@@ -20,14 +20,14 @@ class MaintenanceController {
     // Listar manutenções
     public function index() {
         $maintenances = $this->maintenanceModel->getAll();
-        include '../views/maintenances/index.php';
+        include __DIR__ . '/../views/maintenances/index.php';
     }
 
     // Formulário para criar
     public function create() {
         $vehicles = $this->vehicleModel->getAll();
         $users = $this->userModel->getAll();
-        include '../views/maintenances/create.php';
+        include __DIR__ . '/../views/maintenances/create.php';
     }
 
     // Salvar novo registo
@@ -57,7 +57,7 @@ class MaintenanceController {
         $maintenance = $this->maintenanceModel->getById($id);
         $vehicles = $this->vehicleModel->getAll();
         $users = $this->userModel->getAll();
-        include '../views/maintenances/edit.php';
+        include __DIR__ . '/../views/maintenances/edit.php';
     }
 
     // Atualizar registo

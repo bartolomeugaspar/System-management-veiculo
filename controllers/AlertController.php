@@ -1,9 +1,9 @@
 <?php
 // controllers/AlertController.php
-require_once '../models/Alert.php';
-require_once '../models/Vehicle.php';
-require_once '../models/User.php';
-require_once 'AuthController.php';
+require_once __DIR__ . '/../models/Alert.php';
+require_once __DIR__ . '/../models/Vehicle.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/AuthController.php';
 
 class AlertController {
     private $alertModel;
@@ -20,7 +20,7 @@ class AlertController {
     // Listar alertas
     public function index() {
         $alerts = $this->alertModel->getAll();
-        include '../views/alerts/index.php';
+        include __DIR__ . '/../views/alerts/index.php';
     }
 
     // Formulário para criar

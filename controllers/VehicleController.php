@@ -1,8 +1,8 @@
 <?php
 // controllers/VehicleController.php
-require_once '../models/Vehicle.php';
-require_once '../models/Owner.php';
-require_once 'AuthController.php';
+require_once __DIR__ . '/../models/Vehicle.php';
+require_once __DIR__ . '/../models/Owner.php';
+require_once __DIR__ . '/AuthController.php';
 
 class VehicleController {
     private $vehicleModel;
@@ -17,13 +17,13 @@ class VehicleController {
     // Listar veículos
     public function index() {
         $vehicles = $this->vehicleModel->getAll();
-        include '../views/vehicles/index.php';
+        include __DIR__ . '/../views/vehicles/index.php';
     }
 
     // Formulário para criar
     public function create() {
         $owners = $this->ownerModel->getAll();
-        include '../views/vehicles/create.php';
+        include __DIR__ . '/../views/vehicles/create.php';
     }
 
     // Salvar novo veículo
@@ -48,7 +48,7 @@ class VehicleController {
     public function edit($id) {
         $vehicle = $this->vehicleModel->getById($id);
         $owners = $this->ownerModel->getAll();
-        include '../views/vehicles/edit.php';
+        include __DIR__ . '/../views/vehicles/edit.php';
     }
 
     // Atualizar veículo
